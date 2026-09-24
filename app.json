@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "Yard",
+    "slug": "yard-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "yard",
+    "userInterfaceStyle": "automatic",
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
