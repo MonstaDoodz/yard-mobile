@@ -1,6 +1,7 @@
 import { Redirect, Tabs } from 'expo-router';
 
 import { useSession } from '@/hooks/use-session';
+import { colors, radii, surfaces, typography } from '@/theme/tokens';
 
 export default function CustomerTabsLayout() {
   const { session, customer, loading } = useSession();
@@ -12,11 +13,22 @@ export default function CustomerTabsLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#e8c15b',
-        tabBarInactiveTintColor: '#8c8c8c',
+        tabBarActiveTintColor: colors.white,
+        tabBarInactiveTintColor: colors.darkMuted,
+        tabBarActiveBackgroundColor: colors.purple,
+        tabBarLabelStyle: {
+          fontFamily: typography.family.semibold,
+          fontSize: 13,
+        },
+        tabBarItemStyle: {
+          borderRadius: radii.md,
+          marginHorizontal: 4,
+          marginVertical: 8,
+        },
         tabBarStyle: {
-          backgroundColor: '#171717',
-          borderTopColor: '#2d2d2d',
+          backgroundColor: surfaces.tabBar,
+          borderTopWidth: 0,
+          paddingHorizontal: 10,
         },
       }}
     >

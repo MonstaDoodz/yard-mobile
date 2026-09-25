@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Screen } from '@/components/ui/screen';
 import { useSession } from '@/hooks/use-session';
 import { signOutLocal } from '@/services/auth';
+import { colors, typography } from '@/theme/tokens';
 
 export default function UnsupportedAccountScreen() {
   const { session, customer, loading } = useSession();
@@ -37,14 +38,15 @@ const styles = StyleSheet.create({
     gap: 18,
   },
   title: {
-    color: '#e8e8e8',
+    color: colors.light,
     fontSize: 28,
-    fontWeight: '700',
+    fontFamily: typography.family.bold,
   },
   body: {
-    color: '#a8a8a8',
+    color: colors.darkMuted,
     fontSize: 16,
     lineHeight: 23,
+    fontFamily: typography.family.regular,
   },
   button: {
     minHeight: 50,
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     borderColor: '#444',
   },
   buttonText: {
-    color: '#e8e8e8',
-    fontWeight: '700',
+    color: colors.light,
+    fontFamily: typography.family.bold,
   },
 });

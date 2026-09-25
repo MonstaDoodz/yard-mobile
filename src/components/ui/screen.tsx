@@ -2,6 +2,8 @@ import type { PropsWithChildren } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { colors, spacing } from '@/theme/tokens';
+
 export function Screen({ children }: PropsWithChildren) {
   return (
     <SafeAreaView style={styles.safeArea} edges={['top', 'left', 'right']}>
@@ -13,11 +15,11 @@ export function Screen({ children }: PropsWithChildren) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#171717',
+    backgroundColor: colors.dark,
   },
   content: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 24,
+    paddingHorizontal: spacing.xl,
+    paddingVertical: spacing.xxl,
   },
 });

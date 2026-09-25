@@ -12,6 +12,7 @@ import {
 import { Screen } from '@/components/ui/screen';
 import { useSession } from '@/hooks/use-session';
 import { signInWithPassword } from '@/services/auth';
+import { colors, typography } from '@/theme/tokens';
 
 export default function SignInScreen() {
   const { session, customer, loading } = useSession();
@@ -54,7 +55,7 @@ export default function SignInScreen() {
           autoComplete="email"
           keyboardType="email-address"
           placeholder="Email"
-          placeholderTextColor="#777"
+          placeholderTextColor={colors.inkSoft}
           value={email}
           onChangeText={setEmail}
           style={styles.input}
@@ -64,7 +65,7 @@ export default function SignInScreen() {
           autoComplete="current-password"
           secureTextEntry
           placeholder="Password"
-          placeholderTextColor="#777"
+          placeholderTextColor={colors.inkSoft}
           value={password}
           onChangeText={setPassword}
           style={styles.input}
@@ -80,7 +81,7 @@ export default function SignInScreen() {
           ]}
         >
           {submitting ? (
-            <ActivityIndicator color="#171717" />
+            <ActivityIndicator color={colors.dark} />
           ) : (
             <Text style={styles.buttonText}>Sign in</Text>
           )}
@@ -97,21 +98,22 @@ const styles = StyleSheet.create({
     gap: 14,
   },
   eyebrow: {
-    color: '#e8c15b',
+    color: colors.gold,
     fontSize: 12,
-    fontWeight: '700',
+    fontFamily: typography.family.bold,
     letterSpacing: 2,
   },
   title: {
-    color: '#e8e8e8',
+    color: colors.light,
     fontSize: 30,
-    fontWeight: '700',
+    fontFamily: typography.family.bold,
   },
   body: {
-    color: '#a8a8a8',
+    color: colors.darkMuted,
     fontSize: 14,
     lineHeight: 20,
     marginBottom: 8,
+    fontFamily: typography.family.regular,
   },
   input: {
     minHeight: 52,
@@ -119,19 +121,21 @@ const styles = StyleSheet.create({
     borderColor: '#3a3a3a',
     borderRadius: 14,
     paddingHorizontal: 16,
-    color: '#e8e8e8',
+    color: colors.light,
     backgroundColor: '#222222',
+    fontFamily: typography.family.regular,
   },
   error: {
-    color: '#dc2626',
+    color: colors.destructive,
     fontSize: 13,
+    fontFamily: typography.family.regular,
   },
   button: {
     minHeight: 52,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 999,
-    backgroundColor: '#e8c15b',
+    backgroundColor: colors.gold,
     marginTop: 4,
   },
   buttonPressed: {
@@ -141,8 +145,8 @@ const styles = StyleSheet.create({
     opacity: 0.45,
   },
   buttonText: {
-    color: '#171717',
-    fontWeight: '700',
+    color: colors.dark,
+    fontFamily: typography.family.bold,
     fontSize: 15,
   },
 });

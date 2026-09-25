@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { Screen } from '@/components/ui/screen';
 import { useSession } from '@/hooks/use-session';
 import { signOutLocal } from '@/services/auth';
+import { colors, typography } from '@/theme/tokens';
 
 export default function AccountFoundationScreen() {
   const { customer } = useSession();
@@ -34,19 +35,20 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   eyebrow: {
-    color: '#e8c15b',
+    color: colors.gold,
     fontSize: 12,
-    fontWeight: '700',
+    fontFamily: typography.family.bold,
     letterSpacing: 2,
   },
   title: {
-    color: '#e8e8e8',
+    color: colors.light,
     fontSize: 30,
-    fontWeight: '700',
+    fontFamily: typography.family.bold,
   },
   body: {
-    color: '#a8a8a8',
+    color: colors.darkMuted,
     fontSize: 15,
+    fontFamily: typography.family.regular,
   },
   button: {
     minHeight: 48,
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   buttonText: {
-    color: '#e8e8e8',
-    fontWeight: '700',
+    color: colors.light,
+    fontFamily: typography.family.bold,
   },
 });
